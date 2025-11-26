@@ -164,7 +164,7 @@ function setRole(role) {
 }
 
 async function generateKeys() {
-    let res = await fetch(${API}/generate_keys);
+    let res = await fetch(`${API}/generate_keys`);
     let data = await res.json();
     document.getElementById("public-key").value = data.public_key;
     document.getElementById("private-key").value = data.private_key;
@@ -180,7 +180,7 @@ async function encryptAndEmbed() {
     fd.append("message", msg);
     fd.append("media", file);
 
-    let res = await fetch(${API}/encrypt_embed, { method: "POST", body: fd });
+    let res = await fetch(`${API}/encrypt_embed`, { method: "POST", body: fd });
     let blob = await res.blob();
 
     let url = URL.createObjectURL(blob);
@@ -197,7 +197,7 @@ async function decryptStego() {
     fd.append("private_key", priv);
     fd.append("media", file);
 
-    let res = await fetch(${API}/decrypt, { method: "POST", body: fd });
+    let res = await fetch(`${API}/decrypt`, { method: "POST", body: fd });
     let out = await res.json();
     document.getElementById("decrypted-output").value = out.message;
 }
@@ -205,5 +205,4 @@ async function decryptStego() {
 </script>
 
 </body>
-
 </html>
