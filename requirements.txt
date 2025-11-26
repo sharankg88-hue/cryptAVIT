@@ -6,4 +6,5 @@ Pillow
 soundfile
 moviepy
 opencv-python-headless
-gunicorn app:app
+gunicorn
+
