@@ -1,0 +1,8 @@
+Flask
+Flask-Cors
+cryptography
+numpy
+Pillow
+soundfile
+moviepy
+opencv-python-headless
